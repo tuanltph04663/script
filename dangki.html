@@ -6,14 +6,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+
+	<!-- CSS -->
+	<style type="text/css">
+		.form-group {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px 10px;
+		}
+
+		.btn {
+			display: inline-block;
+			background-color: transparent;
+			border: 0;
+			border-radius: 0.1875rem;
+			color: black;
+			padding: 0.3125rem 0.625rem;
+			text-decoration: none;
+		}
+
+		.btn--warning {
+			background-color: #8dd51a;
+			color: black;
+		}
+
+		.btn--3d.btn--warning {
+			box-shadow: 0px 4px #609112;
+		}
+
+		.register {
+			padding-top: 30px;
+			display: flex;
+			justify-content: center;
+		}
+
+		#nhap {
+			margin: 20px auto;
+			border: solid 5px #8dd51a;
+			width: 400px;
+			padding: 20px;
+		}
+
+	</style>
+
+	<!-- External CSS -->
 	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- jQuery -->
 	<script src="./js/jquery.min.js"></script>
 </head>
 
 <body>
+
 	<header class="header">
 		<h1 class="title">Tabi Tea</h1>
+		<!-- <img src="imgs/banner.jpg"/img> -->
 	</header>
+
 	<section class="breadcrumb">
 		<div class="container">
 			<div class="menu">
@@ -25,31 +74,72 @@
 			</div>
 		</div>
 	</section>
-	<style type="text/css">
-		#nhap {
-			border: solid 5px #000;
-			width: 400px;
-			margin: auto;
-			height: 400px;
-			padding: 20px;
-		}
 
-		#nhap input {
-			width: 400px;
-		}
+	<main>
+		<div id="nhap">
 
-		#nhap span {
-			color: #00F;
-			font-family: Arial, Helvetica, sans-serif;
-		}
-	</style>
+			<div class="form-group">
+				<label for="">Họ và tên:</label>
+				<input type="text" class="input" name="hoten" />
+			</div>
+
+			<div class="form-group">
+				<label for="">Email:</label>
+				<input type="text" class="input" name="email" />
+			</div>
+
+			<div class="form-group">
+				<label for="">User name:</label>
+				<input type="text" class="input" name="Username" />
+			</div>
+
+			<div class="form-group">
+				<label for="">Mật khẩu:</label>
+				<input type="text" class="input" name="matkhau" />
+			</div>
+
+			<div class="form-group">
+				<label for="">Xác nhận mật khẩu:</label>
+				<input type="text" class="input" name="matkhau" />
+			</div>
+
+			<div class="form-group">
+				<label for="">Địa chỉ:</label>
+				<input type="text" class="input" name="diachi" />
+			</div>
+
+			<div class="form-group">
+				<label for="">Giới tính :</label>
+				<label>
+					Nam
+					<input type="radio" name="gender" id="myCheck" onclick="myFunction()">
+				</label>
+				<label>
+					Nữ
+					<input type="radio" name="gender" id=" myCheck" onclick="myFunction()">
+				</label>
+			</div>
+
+			<div class="register">
+				<input class="btn btn--warning btn--3d" type="button" value="Đăng Ký" name="dangky" onclick="dangky()" />
+			</div>
+		</div>
+
+	</main>
+
+	<footer class="footer">
+		<p class="subtitle">developed by tuan &copy; 2018</p>
+	</footer>
+
+	<!-- JavaScript -->
 	<script type="text/javascript">
 		var text = [];
 		text[0] = 'Họ và tên';
 		text[1] = 'Email';
-		text[2] = 'Địa chỉ';
-		text[3] = 'Kích thước';
-		text[4] = 'Số lượng';
+		text[2] = 'Username'
+		text[3] = 'Password';
+		text[4] = 'Password2';
+		text[5] = 'Địa chỉ';
 
 		function dangky() {
 			var arr = document.getElementsByTagName("input");
@@ -66,53 +156,14 @@
 					(arr[1].value.indexOf(".", acong) == arr[1].value.length - 1))
 					ar[1].innerHTML = 'Email sai định dạng';
 			}
-			if (arr[4].value == '') ar[4].innerHTML = "Chưa nhập kích thước";
+			if (arr[4].value == '') ar[4].innerHTML = "chưa xác nhận mật khẩu";
 			else
-			if (arr[3].value == '') ar[3].innerHTML = "chưa nhập số lượng"
+			if (arr[3].value == '') ar[3].innerHTML = "Chưa nhập mật khẩu"
 		}
 	</script>
-	</head>
 
-	<body>
-		<div id="nhap">
-			Họ và tên:
-			<br/>
-			<input type="text" name="hoten" />
-			<br/>
-			<span></span>
-			<br/> Email:
-			<input type="text" name="email" />
-			<br/>
-			<span></span>
-			<br/> Địa chỉ:
-			<input type="text" name="diachi" />
-			<br/>
-			<span></span>
-			<br/> Kích thước:
-			<input type="number" name="kichthuoc" />
-			<br/>
-			<span></span>
-			<br/> Số lượng:
-			<input type="number" name="soluong" />
-			<br/>
-			<span></span>
-			<br/> Loại bể :
-			<input type="checkbox" id="myCheck" onclick="myFunction()">
-			<br/>
-			<input type="checkbox" id="myCheck" onclick="myFunction()">
-			<label>Kính cường lực</label>
-			<input type="checkbox" id="myCheck" onclick="myFunction()">
-			<label>Kính siêu trọng</label>
-
-			<input type="button" value="Đăng Ký" name="dangky" onclick="dangky()" style="width:100px;
-height:50px; margin-left:150px;
-margin-top:50px;" />
-		</div>
-		</main>
-		<footer class="footer">
-			<p class="subtitle">developed by tuan &copy; 2018</p>
-		</footer>
-		<script src="./js/script.js"></script>
-	</body>
+	<!-- External JavaScript -->
+	<script src="./js/script.js"></script>
+</body>
 
 </html>

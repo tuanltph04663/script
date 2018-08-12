@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/jquery.min.js"></script>
-</head>
-<body>
-    <header class="header">
-        <h1 class="title">Tabi Tea</h1>
-    </header>
-    <section class="breadcrumb">
-        <div class="container">
-            <div class="menu">
-                <a href="index.html">Home</a>
-                <a href="checkout.html">Checkout</a>
-				<a href="dangki.html">Đăng ký</a>
-				<a href="Dangnhap.html">Đăng nhập</a>
-				<a href="Slideshow.html">Album nổi bật</a>
-            </div>
-        </div>
-    </section>
-<style type="text/css">
-#nhap{
-	border: solid 5px #000;
-	width:400px;
-	margin:auto;
-	height:400px;
-	padding:20px;
-	}
-#nhap input{
-	width:400px;
-	}
-#nhap span{
-	color: #00F;
-	font-family:Arial, Helvetica, sans-serif;
-	}
-</style>
-<script type="text/javascript">
-	var text=[];
-	text[0]='Họ và tên';
-	text[1]='Email';
-	text[2]='Địa chỉ';
-	text[3]='Kích thước';
-	text[4]='Số lượng';
-function dangky(){
-	var arr=document.getElementsByTagName("input");
-	var ar=document.getElementsByTagName("span")
-	for (var i=0;i<arr.length-2;i++){
-		if(arr[i].value=='') ar[i].innerHTML='Chưa nhập '+text[i];
-		else ar[i].innerHTML='';
-	}
-	if(arr[1].value!='')
-	{
-		var acong=arr[1].value.indexOf("@"); //acong là vị trí xuất hiện đầu tiền của @
-		if(acong<0) ar[1].innerHTML='Email sai định dạng'; 
-		else if
-			 ((arr[1].value.indexOf(".",acong)<0)
-			||(arr[1].value.indexOf(".",acong)==acong+1)
-			||(arr[1].value.indexOf(".",acong)==arr[1].value.length-1)) 
-				ar[1].innerHTML='Email sai định dạng';
-	}
-	if(arr[4].value=='') ar[4].innerHTML="Chưa nhập kích thước";
-		else 
-	if(arr[3].value=='')ar[3].innerHTML="chưa nhập số lượng"
-}
-</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery.min.js"></script>
 </head>
 
 <body>
-<div id="nhap">
-Họ và tên: <br/><input type="text" name="hoten" /><br/><span></span><br/>
-Email: <input type="text" name="email" /><br/><span></span><br/>
-Địa chỉ: <input type="text" name="diachi" /><br/><span></span><br/>
-Kích thước: <input type="number" name="kichthuoc" /><br/><span></span><br/>
-Số lượng: <input type="number" name="soluong" /><br/><span></span><br/>
-Loại bể :	<input type="checkbox" id="myCheck" onclick="myFunction()"> <br/>
-	<input type="checkbox" id="myCheck" onclick="myFunction()"> <label>Kính cường lực</label>
-	<input type="checkbox" id="myCheck" onclick="myFunction()"> <label>Kính siêu trọng</label>
-	
-<input type="button" value="Đăng Ký" name="dangky" onclick="dangky()" style="width:100px;
+	<header class="header">
+		<h1 class="title">Tabi Tea</h1>
+	</header>
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="menu">
+				<a href="index.html">Home</a>
+				<a href="checkout.html">Checkout</a>
+				<a href="dangki.html">Đăng ký</a>
+				<a href="Dangnhap.html">Đăng nhập</a>
+				<a href="Slideshow.html">Album nổi bật</a>
+			</div>
+		</div>
+	</section>
+	<style type="text/css">
+		#nhap {
+			border: solid 5px #000;
+			width: 400px;
+			margin: auto;
+			height: 400px;
+			padding: 20px;
+		}
+
+		#nhap input {
+			width: 400px;
+		}
+
+		#nhap span {
+			color: #00F;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	</style>
+	<script type="text/javascript">
+		var text = [];
+		text[0] = 'Họ và tên';
+		text[1] = 'Email';
+		text[2] = 'Địa chỉ';
+		text[3] = 'Kích thước';
+		text[4] = 'Số lượng';
+
+		function dangky() {
+			var arr = document.getElementsByTagName("input");
+			var ar = document.getElementsByTagName("span")
+			for (var i = 0; i < arr.length - 2; i++) {
+				if (arr[i].value == '') ar[i].innerHTML = 'Chưa nhập ' + text[i];
+				else ar[i].innerHTML = '';
+			}
+			if (arr[1].value != '') {
+				var acong = arr[1].value.indexOf("@"); //acong là vị trí xuất hiện đầu tiền của @
+				if (acong < 0) ar[1].innerHTML = 'Email sai định dạng';
+				else if ((arr[1].value.indexOf(".", acong) < 0) ||
+					(arr[1].value.indexOf(".", acong) == acong + 1) ||
+					(arr[1].value.indexOf(".", acong) == arr[1].value.length - 1))
+					ar[1].innerHTML = 'Email sai định dạng';
+			}
+			if (arr[4].value == '') ar[4].innerHTML = "Chưa nhập kích thước";
+			else
+			if (arr[3].value == '') ar[3].innerHTML = "chưa nhập số lượng"
+		}
+	</script>
+	</head>
+
+	<body>
+		<div id="nhap">
+			Họ và tên:
+			<br/>
+			<input type="text" name="hoten" />
+			<br/>
+			<span></span>
+			<br/> Email:
+			<input type="text" name="email" />
+			<br/>
+			<span></span>
+			<br/> Địa chỉ:
+			<input type="text" name="diachi" />
+			<br/>
+			<span></span>
+			<br/> Kích thước:
+			<input type="number" name="kichthuoc" />
+			<br/>
+			<span></span>
+			<br/> Số lượng:
+			<input type="number" name="soluong" />
+			<br/>
+			<span></span>
+			<br/> Loại bể :
+			<input type="checkbox" id="myCheck" onclick="myFunction()">
+			<br/>
+			<input type="checkbox" id="myCheck" onclick="myFunction()">
+			<label>Kính cường lực</label>
+			<input type="checkbox" id="myCheck" onclick="myFunction()">
+			<label>Kính siêu trọng</label>
+
+			<input type="button" value="Đăng Ký" name="dangky" onclick="dangky()" style="width:100px;
 height:50px; margin-left:150px;
-margin-top:50px;"/>
-</div>
-	 </main>
-    <footer class="footer">
-        <p class="subtitle">developed by tuan &copy; 2018</p>
-    </footer>
-    <script src="./js/script.js"></script>
-</body>
+margin-top:50px;" />
+		</div>
+		</main>
+		<footer class="footer">
+			<p class="subtitle">developed by tuan &copy; 2018</p>
+		</footer>
+		<script src="./js/script.js"></script>
+	</body>
+
 </html>

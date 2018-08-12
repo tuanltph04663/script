@@ -15,6 +15,19 @@
 			padding: 10px 10px;
 		}
 
+		.form-group .input {
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		.form-group .input.invalid {
+			border: tomato solid 1px;
+		}
+
+		.form-group .input.valid {
+			border: #8dd51a solid 1px;
+		}
+
 		.btn {
 			display: inline-block;
 			background-color: transparent;
@@ -34,19 +47,19 @@
 			box-shadow: 0px 4px #609112;
 		}
 
-		.register {
+		.register__button {
 			padding-top: 30px;
 			display: flex;
 			justify-content: center;
 		}
 
-		#nhap {
+		.register-form {
 			margin: 20px auto;
-			border: solid 5px #8dd51a;
 			width: 400px;
 			padding: 20px;
+			border: #8dd51a solid 1px;
+			box-shadow: 5px 5px 0px 0px #8DD51A;
 		}
-
 	</style>
 
 	<!-- External CSS -->
@@ -76,11 +89,11 @@
 	</section>
 
 	<main>
-		<div id="nhap">
+		<div id="register-form" class="register-form">
 
 			<div class="form-group">
 				<label for="">Họ và tên:</label>
-				<input type="text" class="input" name="hoten" />
+				<input type="text" class="input" name="fullName" />
 			</div>
 
 			<div class="form-group">
@@ -90,37 +103,37 @@
 
 			<div class="form-group">
 				<label for="">User name:</label>
-				<input type="text" class="input" name="Username" />
+				<input type="text" class="input" name="userName" />
 			</div>
 
 			<div class="form-group">
 				<label for="">Mật khẩu:</label>
-				<input type="text" class="input" name="matkhau" />
+				<input type="text" class="input" name="password" />
 			</div>
 
 			<div class="form-group">
 				<label for="">Xác nhận mật khẩu:</label>
-				<input type="text" class="input" name="matkhau" />
+				<input type="text" class="input" name="confirmPassword" />
 			</div>
 
 			<div class="form-group">
 				<label for="">Địa chỉ:</label>
-				<input type="text" class="input" name="diachi" />
+				<input type="text" class="input" name="address" />
 			</div>
 
 			<div class="form-group">
 				<label for="">Giới tính :</label>
 				<label>
 					Nam
-					<input type="radio" name="gender" id="myCheck" onclick="myFunction()">
+					<input type="radio" name="gender" id="myCheck">
 				</label>
 				<label>
 					Nữ
-					<input type="radio" name="gender" id=" myCheck" onclick="myFunction()">
+					<input type="radio" name="gender" id=" myCheck">
 				</label>
 			</div>
 
-			<div class="register">
+			<div class="register__button">
 				<input class="btn btn--warning btn--3d" type="button" value="Đăng Ký" name="dangky" onclick="dangky()" />
 			</div>
 		</div>
@@ -133,32 +146,68 @@
 
 	<!-- JavaScript -->
 	<script type="text/javascript">
-		var text = [];
-		text[0] = 'Họ và tên';
-		text[1] = 'Email';
-		text[2] = 'Username'
-		text[3] = 'Password';
-		text[4] = 'Password2';
-		text[5] = 'Địa chỉ';
+		function valid(field) {
+			field.removeClass('invalid');
+			field.addClass('valid');
+		}
+
+		function invalid(field) {
+			field.removeClass('valid');
+			field.addClass('invalid');
+		}
+
+		function validation(field) {
+			const fieldVal = field.val();
+			if (fieldVal == undefined || fieldVal.trim() == "") {
+				invalid(field);
+			} else {
+				valid(field);
+			}
+		}
+
+		function emailValidation(field) {
+			// TODO email validation handle here
+		}
+
+		function confirmPassValidation(field) {
+			// TODO password confirm validation handle here
+		}
 
 		function dangky() {
-			var arr = document.getElementsByTagName("input");
-			var ar = document.getElementsByTagName("span")
-			for (var i = 0; i < arr.length - 2; i++) {
-				if (arr[i].value == '') ar[i].innerHTML = 'Chưa nhập ' + text[i];
-				else ar[i].innerHTML = '';
-			}
-			if (arr[1].value != '') {
-				var acong = arr[1].value.indexOf("@"); //acong là vị trí xuất hiện đầu tiền của @
-				if (acong < 0) ar[1].innerHTML = 'Email sai định dạng';
-				else if ((arr[1].value.indexOf(".", acong) < 0) ||
-					(arr[1].value.indexOf(".", acong) == acong + 1) ||
-					(arr[1].value.indexOf(".", acong) == arr[1].value.length - 1))
-					ar[1].innerHTML = 'Email sai định dạng';
-			}
-			if (arr[4].value == '') ar[4].innerHTML = "chưa xác nhận mật khẩu";
-			else
-			if (arr[3].value == '') ar[3].innerHTML = "Chưa nhập mật khẩu"
+			const iFullName = $('#register-form').find('input[name="fullName"]');
+			const iEmail = $('#register-form').find('input[name="email"]');
+			const iUserName = $('#register-form').find('input[name="userName"]');
+			const iPassword = $('#register-form').find('input[name="password"]');
+			const iConfirmPassword = $('#register-form').find('input[name="confirmPassword"]');
+			const iAddress = $('#register-form').find('input[name="address"]');
+
+			// validate: neu trong, add them class invalid (tomato border input)
+			validation(iFullName);
+			validation(iUserName);
+			validation(iPassword);
+			validation(iAddress);
+			validation(iConfirmPassword);
+			// validation(iEmail); 
+
+
+
+			// var arr = document.getElementsByTagName("input");
+			// var ar = document.getElementsByTagName("span")
+			// for (var i = 0; i < arr.length - 2; i++) {
+			// 	if (arr[i].value == '') ar[i].innerHTML = 'Chưa nhập ' + text[i];
+			// 	else ar[i].innerHTML = '';
+			// }
+			// if (arr[1].value != '') {
+			// 	var acong = arr[1].value.indexOf("@"); //acong là vị trí xuất hiện đầu tiền của @
+			// 	if (acong < 0) ar[1].innerHTML = 'Email sai định dạng';
+			// 	else if ((arr[1].value.indexOf(".", acong) < 0) ||
+			// 		(arr[1].value.indexOf(".", acong) == acong + 1) ||
+			// 		(arr[1].value.indexOf(".", acong) == arr[1].value.length - 1))
+			// 		ar[1].innerHTML = 'Email sai định dạng';
+			// }
+			// if (arr[4].value == '') ar[4].innerHTML = "chưa xác nhận mật khẩu";
+			// else
+			// if (arr[3].value == '') ar[3].innerHTML = "Chưa nhập mật khẩu"
 		}
 	</script>
 

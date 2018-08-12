@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<h1 class="title">Tabi Tea</h1>
+	</header>
+
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="menu">
+				<a href="index.html">Home</a>
+				<a href="checkout.html">Checkout</a>
+				<a href="dangki.html">Đăng ký</a>
+				<a href="Dangnhap.html">Đăng nhập</a>
+				<a href="Slideshow.html">Album nổi bật</a>
+			</div>
+		</div>
+	</section>
+
+	<main class="main">
+		<div id="slideshow">
+			<img src="imgs/s1.png" id="slide" height="300" width="400" />
+			</br>
+			<input id="button1" type="button" value="first" onclick="first()" />
+			<input id="button2" type="button" value="last" onclick="last()" />
+			<input id="button3" type="button" value="pre" onclick="pre()" />
+			<input id="button4" type="button" value="next" onclick="next()" />
+			<input id="button5" type="button" value="play" onclick="play()" />
+			<input id="button6" type="button" value="stop" onclick="stop()" />
+		</div>
+		<script type="text/javascript">
+			var count = 0;
+			var auto;
+			var mangAnh = [];
+			mangAnh[0] = 'imgs/s1.png';
+			mangAnh[1] = 'imgs/s2.png';
+			mangAnh[2] = 'imgs/s3.png';
+			mangAnh[3] = 'imgs/s4.png';
+			mangAnh[4] = 'imgs/s5.png';
+			mangAnh[5] = 'imgs/s6.png';
+
+			function first() {
+				count = 0;
+				document.images['slide'].src = mangAnh[count];
+			}
+
+			function last() {
+				count = 5;
+				document.images['slide'].src = mangAnh[count];
+			}
+
+			function pre() {
+				count--;
+				if (count < 0) {
+					count = 5;
+				}
+				document.images['slide'].src = mangAnh[count];
+			}
+
+			function next() {
+				count++;
+				if (count > 5) {
+					count = 0;
+				}
+				document.images['slide'].src = mangAnh[count];
+			}
+
+			function play() {
+				auto = setInterval(function () {
+					next()
+				}, 2000);
+
+			}
+
+			function stop() {
+				clearInterval(auto)
+
+			}
+		</script>
+	</main>
+
+	<footer class="footer">
+		<p class="subtitle">developed by tuanltph04663 &copy; 2018</p>
+	</footer>
+</body>
+
+</html>

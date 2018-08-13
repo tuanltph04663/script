@@ -142,3 +142,36 @@ td {
 .btn--3d.btn--default {
     box-shadow: 0px 4px #609112;
 }
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.form-group .input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-group .input.invalid {
+    border: tomato solid 1px;
+}
+
+.form-group .input.valid {
+    border: #8dd51a solid 1px;
+}
+
+.form__button {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    margin: 20px auto;
+    width: 400px;
+    padding: 20px;
+    border: #8dd51a solid 1px;
+    box-shadow: 5px 5px 0px 0px #8DD51A;
+}

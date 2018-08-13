@@ -7,28 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <style type="text/css">
-        #nhap {
-            border: solid 5px #000;
-            width: 400px;
-            margin: auto;
-            height: 250px;
-            padding: 20px;
-        }
-
-        #nhap input {
-            width: 400px;
-        }
-
-        #nhap span {
-            color: #00F;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
-
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/jquery.min.js">
-    </script>
+    <script src="./js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -49,31 +29,38 @@
         </div>
     </section>
 
-    <div id="nhap">
-        Tên đăng nhập:
-        <input type="text" name="dangnhap" />
-        <br/>
-        <span></span>
-        <br/> Mật khẩu:
-        <input type="password" name="pass" />
-        <br/>
-        <span></span>
-        <br/>
-        <input id="savedpass_checkbox" type="checkbox" name="pass" value="saved">Lưu mật khẩu ?
-        <br/>
-        <span></span>
-        <br/>
-        <input type="button" value="Đăng Ký" name="dangky" onclick="dangky()" style="width:100px;
-height:50px; margin-left:150px;
-margin-top:50px;" />
-    </div>
+    <main>
+        <div id="nhap" class="form">
+
+            <div class="form-group">
+                <label for="">Tên đăng nhập:</label>
+                <input type="text" class="input" name="userName" />
+            </div>
+
+            <div class="form-group">
+                <label for="">Mật khẩu:</label>
+                <input type="password" class="input" name="password" />
+            </div>
+
+            <div class="form-group">
+                <label for="">
+                    <input id="savedpass_checkbox" type="checkbox" name="pass" value="saved"> Lưu mật khẩu ?
+                </label>
+            </div>
+
+            <div class="form__button">
+                <input class="btn btn--default btn--3d" type="button" value="Đăng nhập">
+            </div>
+            
+        </div>
+    </main>
 
     <footer class="footer">
         <p class="subtitle">developed by tuanltph04663 &copy; 2018</p>
     </footer>
 
     <script src="./js/script.js"></script>
-    
+
 </body>
 
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style type="text/css">
+        #nhap {
+            border: solid 5px #000;
+            width: 400px;
+            margin: auto;
+            height: 250px;
+            padding: 20px;
+        }
+
+        #nhap input {
+            width: 400px;
+        }
+
+        #nhap span {
+            color: #00F;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery.min.js">
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="title">Tabi Tea</h1>
+    </header>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="register.html">Đăng ký</a>
+                <a href="login.html">Đăng nhập</a>
+                <a href="slideshow.html">Album nổi bật</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="nhap">
+        Tên đăng nhập:
+        <input type="text" name="dangnhap" />
+        <br/>
+        <span></span>
+        <br/> Mật khẩu:
+        <input type="password" name="pass" />
+        <br/>
+        <span></span>
+        <br/>
+        <input id="savedpass_checkbox" type="checkbox" name="pass" value="saved">Lưu mật khẩu ?
+        <br/>
+        <span></span>
+        <br/>
+        <input type="button" value="Đăng Ký" name="dangky" onclick="dangky()" style="width:100px;
+height:50px; margin-left:150px;
+margin-top:50px;" />
+    </div>
+
+    <footer class="footer">
+        <p class="subtitle">developed by tuanltph04663 &copy; 2018</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    
+</body>
+
+</html>

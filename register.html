@@ -28,25 +28,6 @@
 			border: #8dd51a solid 1px;
 		}
 
-		.btn {
-			display: inline-block;
-			background-color: transparent;
-			border: 0;
-			border-radius: 0.1875rem;
-			color: black;
-			padding: 0.3125rem 0.625rem;
-			text-decoration: none;
-		}
-
-		.btn--warning {
-			background-color: #8dd51a;
-			color: black;
-		}
-
-		.btn--3d.btn--warning {
-			box-shadow: 0px 4px #609112;
-		}
-
 		.register__button {
 			padding-top: 30px;
 			display: flex;
@@ -73,20 +54,19 @@
 
 	<header class="header">
 		<h1 class="title">Tabi Tea</h1>
-		<!-- <img src="imgs/banner.jpg"/img> -->
 	</header>
 
 	<section class="breadcrumb">
-		<div class="container">
-			<div class="menu">
-				<a href="index.html">Home</a>
-				<a href="checkout.html">Checkout</a>
-				<a href="dangki.html">Đăng ký</a>
-				<a href="Dangnhap.html">Đăng nhập</a>
-				<a href="Slideshow.html">Album nổi bật</a>
-			</div>
-		</div>
-	</section>
+        <div class="container">
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="checkout.html">Checkout</a>
+				<a href="register.html">Đăng ký</a>
+				<a href="login.html">Đăng nhập</a>
+				<a href="slideshow.html">Album nổi bật</a>
+            </div>
+        </div>
+    </section>
 
 	<main>
 		<div id="register-form" class="register-form">
@@ -134,7 +114,7 @@
 			</div>
 
 			<div class="register__button">
-				<input class="btn btn--warning btn--3d" type="button" value="Đăng Ký" name="dangky" onclick="dangky()" />
+				<input class="btn btn--default btn--3d" type="button" value="Đăng Ký" name="dangky" onclick="dangky()" />
 			</div>
 		</div>
 

@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+td {
+    padding: 10px 5px;
+}
+
 .header {
     height: 200px;
     display: flex;
@@ -99,6 +103,9 @@ body {
 
 .amount {
     border: #8dd51a solid 1px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 0.1875rem;
 }
 
 .isSelected {
@@ -115,4 +122,23 @@ body {
 
 .footer .subtitle {
     color: white;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0.1875rem;
+    color: black;
+    padding: 0.3125rem 0.625rem;
+    text-decoration: none;
+}
+
+.btn--default {
+    background-color: #8dd51a;
+    color: black;
+}
+
+.btn--3d.btn--default {
+    box-shadow: 0px 4px #609112;
 }

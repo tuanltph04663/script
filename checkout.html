@@ -8,167 +8,233 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/jquery.min.js"></script>
-    <script>
-        $(function () {
-
-            document.getElementById("slt").disabled = true;
-            // document.getElementById("slc").disabled = true;
-
-            function check() {
-                if (document.getElementById("ctao").checked == true) {
-                    document.getElementById("slt").disabled = false;
-                } else {
-                    document.getElementById("slt").disabled = true;
-                    document.getElementById("slt").value = "";
-                    document.getElementById("ttt").value = "";
-                }
-                if (document.getElementById("ccam").checked == true) {
-                    document.getElementById("slc").disabled = false;
-                } else {
-                    document.getElementById("slc").disabled = true;
-                    document.getElementById("slc").value = "";
-                }
-
-            }
-
-            $('.isSelected').on('change', function() {
-                console.log('someok');
-                
-            })
-        })
-    </script>
 </head>
 
 <body>
+
     <header class="header">
-        <h1 class="title">Teashop</h1>
+        <h1 class="title">Tabi Tea</h1>
     </header>
+
     <section class="breadcrumb">
         <div class="container">
             <div class="menu">
                 <a href="index.html">Home</a>
                 <a href="checkout.html">Checkout</a>
-				<a href="dangki.html">Đăng ký</a>
-				<a href="Dangnhap.html">Đăng nhập</a>
-				<a href="Slideshow.html">Album nổi bật</a>
-				
+                <a href="register.html">Đăng ký</a>
+                <a href="login.html">Đăng nhập</a>
+                <a href="slideshow.html">Album nổi bật</a>
             </div>
         </div>
     </section>
+
     <main class="main">
         <div class="container">
             <form class="checkout">
-                <table border="1">
-                    <tr>
-                        <td>chọn</td>
-                        <td style="width:200px">Hàng hóa</td>
-                        <td style="width:100px">Đơn giá</td>
-                        <td style="width:150px">Số lượng</td>
-                        <td style="width:150px">Thành tiền</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Iphone" />
-                        </td>
-                        <td>Trà Sữa Matcha Đậu đỏ</td>
-                        <td>40,000</td>
-                        <td>
-                            <input class="amount" type="text" name="sliphone" id="slt" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttiphone" id="ttiphone">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Samsung" />
-                        </td>
-                        <td>Trà sữa ô long</td>
-                        <td>53,000</td>
-                        <td>
-                            <input class="amount" type="text" name="slsamsung" id="slsamsung" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttsamsung" id="ttsamsung">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Nokia" />
-                        </td>
-                        <td>Trà sữa pudding đậu đỏ</td>
-                        <td>47,000</td>
-                        <td>
-                            <input class="amount" type="text" name="slnokia" id="slnokia" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttnokia" id="ttnokia">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Sony" />
-                        </td>
-                        <td>Trà sữa caramen</td>
-                        <td>49,000</td>
-                        <td>
-                            <input class="amount" type="text" name="slsony" id="slsony" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttsony" id="ttsony">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" class="amount" type="checkbox" id="Motorola" />
-                        </td>
-                        <td>Trà sữa trà xanh</td>
-                        <td>43,000</td>
-                        <td>
-                            <input class="amount" type="text" name="slmotorola" id="slmotorola" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttmotorola" id="ttmotorola">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Oppo" />
-                        </td>
-                        <td>Trà Sữa Earl Grey</td>
-                        <td>53,000</td>
-                        <td>
-                            <input class="amount" type="text" name="sloppo" id="sloppo" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttoppo" id="ttoppo">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="isSelected" type="checkbox" id="Bphone" />
-                        </td>
-                        <td>Trà Alisan</td>
-                        <td>65,000</td>
-                        <td>
-                            <input class="amount" type="text" name="slbphone" id="slbphone" onKeyUp="">
-                        </td>
-                        <td>
-                            <input type="text" name="ttbphone" id="ttbphone">
-                        </td>
-                    </tr>
-
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>chọn</th>
+                            <th>Hàng hóa</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà Sữa Matcha Đậu đỏ</td>
+                            <td class="price">40,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà sữa ô long</td>
+                            <td class="price">53,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà sữa pudding đậu đỏ</td>
+                            <td class="price">47,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà sữa caramen</td>
+                            <td class="price">49,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà sữa trà xanh</td>
+                            <td class="price">43,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà Sữa Earl Grey</td>
+                            <td class="price">53,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="isSelected" type="checkbox">
+                            </td>
+                            <td>Trà Alisan</td>
+                            <td class="price">65,000</td>
+                            <td>
+                                <button class="btn btn--default dec" type="button">-</button>
+                                <input class="amount" type="text">
+                                <button class="btn btn--default inc" type="button">+</button>
+                            </td>
+                            <td class="total"></td>
+                        </tr>
+                    </tbody>
                 </table>
-
-
             </form>
         </div>
     </main>
+
     <footer class="footer">
         <p class="subtitle">developed by tuan &copy; 2018</p>
     </footer>
+
     <script src="./js/script.js"></script>
+
+    <script>
+        $(function () {
+            $('.amount').val(1);
+
+            // decrement amount
+            $('.dec').on('click', function () {
+                const amount = $(this).siblings('.amount');
+                const preVal = amount.val();
+
+                if (preVal == 0) {
+                    amount.val(0);
+                } else {
+                    const nextVal = preVal - 1;
+                    amount.val(nextVal);
+                }
+
+                changeTotal(amount);
+            })
+
+            // increment amount
+            $('.inc').on('click', function () {
+                const amount = $(this).siblings('.amount');
+                const preVal = amount.val();
+
+                const nextVal = Number.parseInt(preVal) + 1;
+                amount.val(nextVal);
+
+                changeTotal(amount);
+            })
+
+            // change total 
+            function changeTotal(field) {
+                // get amount
+                const amount = Number.parseInt(field.val());
+
+                // get price
+                const price = field.closest('tr').find('.price').text();
+
+                // calculate total
+                const total = price.replace(',', '') * amount;
+                totalFomarted = (total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+                field.closest('tr').find('.total').text(totalFomarted);
+            }
+
+            // isSelectedChange
+            $('.isSelected').on('change', function () {
+                const row = $(this);
+                const isSelected = row.is(':checked');
+                console.log(isSelected);
+                if (isSelected) {
+                    enableRow(row);
+                } else {
+                    disableRow(row);
+                }
+            })
+
+            // disable row
+            function disableRow(field) {
+                const row = field.closest('tr');
+
+                // disable dec button
+                // disable inc button
+                row.find('.dec, .inc').attr('disabled', 'disabled');
+
+                // disable input
+                row.find('.amount').prop('disabled', true);
+
+                row.find('.total').css("text-decoration", "line-through");
+            }
+
+            // enable row
+            function enableRow(field) {
+                const row = field.closest('tr');
+
+                // disable dec button
+                // disable inc button
+                row.find('.dec, .inc').removeAttr('disabled');
+
+                // disable input
+                row.find('.amount').prop('disabled', false);
+                row.find('.total').css("text-decoration", "none");
+            }
+
+            // disable all row
+            disableRow($('.isSelected'));
+
+        })
+    </script>
+
 </body>
 
 </html>

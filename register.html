@@ -21,16 +21,16 @@
 	</header>
 
 	<section class="breadcrumb">
-        <div class="container">
-            <div class="menu">
-                <a href="index.html">Home</a>
-                <a href="checkout.html">Checkout</a>
+		<div class="container">
+			<div class="menu">
+				<a href="index.html">Home</a>
+				<a href="checkout.html">Checkout</a>
 				<a href="register.html">Đăng ký</a>
 				<a href="login.html">Đăng nhập</a>
 				<a href="slideshow.html">Album nổi bật</a>
-            </div>
-        </div>
-    </section>
+			</div>
+		</div>
+	</section>
 
 	<main>
 		<div id="register-form" class="form">
@@ -52,12 +52,12 @@
 
 			<div class="form-group">
 				<label for="">Mật khẩu:</label>
-				<input type="text" class="input" name="password" />
+				<input type="password" class="input" name="password" />
 			</div>
 
 			<div class="form-group">
 				<label for="">Xác nhận mật khẩu:</label>
-				<input type="text" class="input" name="confirmPassword" />
+				<input type="password" class="input" name="confirmPassword" />
 			</div>
 
 			<div class="form-group">
@@ -69,11 +69,11 @@
 				<label for="">Giới tính :</label>
 				<label>
 					Nam
-					<input type="radio" name="gender" id="myCheck">
+					<input type="radio" name="gender" checked>
 				</label>
 				<label>
 					Nữ
-					<input type="radio" name="gender" id=" myCheck">
+					<input type="radio" name="gender">
 				</label>
 			</div>
 
@@ -111,10 +111,30 @@
 
 		function emailValidation(field) {
 			// TODO email validation handle here
+			const fieldVal = field.val();
+			const acong = fieldVal.indexOf("@"); // acong là vị trí xuất hiện đầu tiền của @
+			const dot = fieldVal.indexOf(".", acong);
+
+			if (acong < 0 || dot < 0 || dot == (acong + 1) || dot == (fieldVal.length - 1)) {
+				// email sai dinh dang
+				invalid(field);
+			} else {
+				// email dung
+				valid(field);
+			}
 		}
 
-		function confirmPassValidation(field) {
+		function confirmPassValidation(field, password) {
 			// TODO password confirm validation handle here
+			const fieldVal = field.val();
+			const passwordVal = password.val();
+
+			if (fieldVal == passwordVal) {
+				valid(field);
+			} else {
+				invalid(field);
+			}
+
 		}
 
 		function dangky() {
@@ -130,8 +150,10 @@
 			validation(iUserName);
 			validation(iPassword);
 			validation(iAddress);
+
+			confirmPassValidation(iConfirmPassword, iPassword);
 			validation(iConfirmPassword);
-			// validation(iEmail); 
+			emailValidation(iEmail);
 
 
 
@@ -142,13 +164,7 @@
 			// 	else ar[i].innerHTML = '';
 			// }
 			// if (arr[1].value != '') {
-			// 	var acong = arr[1].value.indexOf("@"); //acong là vị trí xuất hiện đầu tiền của @
-			// 	if (acong < 0) ar[1].innerHTML = 'Email sai định dạng';
-			// 	else if ((arr[1].value.indexOf(".", acong) < 0) ||
-			// 		(arr[1].value.indexOf(".", acong) == acong + 1) ||
-			// 		(arr[1].value.indexOf(".", acong) == arr[1].value.length - 1))
-			// 		ar[1].innerHTML = 'Email sai định dạng';
-			// }
+
 			// if (arr[4].value == '') ar[4].innerHTML = "chưa xác nhận mật khẩu";
 			// else
 			// if (arr[3].value == '') ar[3].innerHTML = "Chưa nhập mật khẩu"

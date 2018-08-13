@@ -30,7 +30,7 @@
     </section>
 
     <main>
-        <div id="nhap" class="form">
+        <div id="login-form" class="form">
 
             <div class="form-group">
                 <label for="">Tên đăng nhập:</label>
@@ -49,9 +49,9 @@
             </div>
 
             <div class="form__button">
-                <input class="btn btn--default btn--3d" type="button" value="Đăng nhập">
+                <input class="btn btn--default btn--3d" type="button" value="Đăng nhập" onclick="login()">
             </div>
-            
+
         </div>
     </main>
 
@@ -59,6 +59,37 @@
         <p class="subtitle">developed by tuanltph04663 &copy; 2018</p>
     </footer>
 
+    <script>
+        function valid(field) {
+            field.removeClass('invalid');
+            field.addClass('valid');
+        }
+
+        function invalid(field) {
+            field.removeClass('valid');
+            field.addClass('invalid');
+        }
+
+        function validation(field) {
+            const fieldVal = field.val();
+            if (fieldVal == undefined || fieldVal.trim() == "") {
+                invalid(field);
+                return false;
+            } else {
+                valid(field);
+                return true;
+            }
+        }
+
+        function login() {
+            const iUserName = $('#login-form').find('input[name="userName"]');
+            const iPassword = $('#login-form').find('input[name="password"]');
+
+            if (validation(iUserName) && validation(iPassword)) {
+                alert('Đăng nhập thành công!');
+            }
+        }
+    </script>
     <script src="./js/script.js"></script>
 
 </body>
